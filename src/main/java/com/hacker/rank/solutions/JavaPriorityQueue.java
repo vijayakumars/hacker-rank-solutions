@@ -22,10 +22,8 @@ public class JavaPriorityQueue {
           Student student = new Student(id, name, cgpa);
           studentsQ.add(student);
         } else if(SERVED.equalsIgnoreCase(op)) {
-          Student student = studentsQ.poll();
-          if(student == null) {
-            
-          }
+          //SERVE the priority student 
+          studentsQ.poll();
         }
       }
         if(studentsQ.isEmpty()) {
