@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-class Result {
+class Quicksort1PartitionResult {
 
 	/*
 	 * Complete the 'quickSort' function below.
@@ -47,17 +47,22 @@ class Result {
 
 public class Quicksort1Partition {
 	public static void main(String[] args) throws IOException {
-		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+		BufferedReader bufferedReader = new BufferedReader(
+				new InputStreamReader(System.in));
+		BufferedWriter bufferedWriter = new BufferedWriter(
+				new FileWriter(System.getenv("OUTPUT_PATH")));
 
 		int n = Integer.parseInt(bufferedReader.readLine().trim());
 
-		List<Integer> arr = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+		List<Integer> arr = Stream.of(
+				bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
 				.map(Integer::parseInt).collect(toList());
 
-		List<Integer> result = Result.quickSort(arr);
+		List<Integer> result = Quicksort1PartitionResult.quickSort(arr);
 
-		bufferedWriter.write(result.stream().map(Object::toString).collect(joining(" ")) + "\n");
+		bufferedWriter.write(
+				result.stream().map(Object::toString).collect(joining(" "))
+						+ "\n");
 
 		bufferedReader.close();
 		bufferedWriter.close();
